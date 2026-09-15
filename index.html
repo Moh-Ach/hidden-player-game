@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Player — Football Draft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">⚽ FOOTBALL DRAFT GAME</div>
+        <h1>Hidden <span>Player</span></h1>
+        <p>Choose the announced player or gamble on the hidden one.</p>
+      </div>
+      <button id="newGameBtn" class="ghost-btn">↻ New Game</button>
+    </header>
+
+    <main>
+      <section class="scoreboard">
+        <div class="team-card your-team">
+          <div class="team-title">YOU</div>
+          <div id="yourCount" class="count">0 / 11</div>
+        </div>
+        <div class="round-box">
+          <span>ROUND</span>
+          <strong id="roundNumber">1</strong>
+          <small id="positionName">Goalkeeper</small>
+        </div>
+        <div class="team-card friend-team">
+          <div class="team-title">FRIEND</div>
+          <div id="friendCount" class="count">0 / 11</div>
+        </div>
+      </section>
+
+      <section id="gamePanel" class="game-panel">
+        <div class="position-badge" id="positionBadge">🧤 GOALKEEPER</div>
+
+        <div class="players">
+          <article class="player-card announced">
+            <div class="card-label">ANNOUNCED</div>
+            <div class="avatar" id="announcedAvatar">?</div>
+            <h2 id="announcedName">Player</h2>
+            <p id="announcedMeta">Position</p>
+            <button id="chooseAnnounced" class="choose-btn">Choose Announced</button>
+          </article>
+
+          <div class="vs">VS</div>
+
+          <article class="player-card hidden-player">
+            <div class="card-label">HIDDEN</div>
+            <div class="avatar mystery" id="hiddenAvatar">?</div>
+            <h2 id="hiddenName">Hidden Player</h2>
+            <p id="hiddenMeta">Unknown until revealed</p>
+            <button id="chooseHidden" class="choose-btn">Choose Hidden</button>
+          </article>
+        </div>
+
+        <div id="result" class="result hidden">
+          <div class="result-icon">🎲</div>
+          <div>
+            <strong id="resultTitle"></strong>
+            <p id="resultText"></p>
+          </div>
+        </div>
+
+        <button id="nextBtn" class="next-btn hidden">Next Round →</button>
+      </section>
+
+      <section class="lineups">
+        <div class="lineup">
+          <div class="lineup-head">
+            <h2>🟢 Your XI</h2>
+            <span id="yourRating">—</span>
+          </div>
+          <div id="yourPlayers" class="players-list"></div>
+        </div>
+        <div class="lineup">
+          <div class="lineup-head">
+            <h2>🔴 Friend's XI</h2>
+            <span id="friendRating">—</span>
+          </div>
+          <div id="friendPlayers" class="players-list"></div>
+        </div>
+      </section>
+
+      <section id="finalPanel" class="final-panel hidden">
+        <div class="trophy">🏆</div>
+        <h2 id="finalTitle">Your team wins!</h2>
+        <p id="finalText"></p>
+        <div class="final-actions">
+          <button id="playAgainBtn" class="primary-btn">Play Again</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Built for two friends • No repeated players • 11 rounds
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
